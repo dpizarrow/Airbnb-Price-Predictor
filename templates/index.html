@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Proyecto CC6409</title>
+    </head>
+    <body>
+        <div class = "login">
+            <h1>Proyecto CC6409</h1>
+            <form action = "{{ url_for('predict') }}" method = "post">
+                <input type="text" name="minimum_nights" placeholder="Minimum Nights" required="required" />
+                <select id="room_type" name="room_type" selected="room type">
+                    <option value="1">Private Room</option>
+                    <option value="2">Entire Room</option>
+                    <option value="3">Shared room</option>
+                </select>
+                <select id="neighbourhood" name="neighbourhood_group">
+                    <option value="1">Brooklyn</option>
+                    <option value="2">Manhattan</option>
+                </select>
+                <input type="text" name="availability_365" placeholder="Availability" required="required"  />
+                <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+            </form>
+            <br>
+            <br>
+            {{ prediction_text }}
+        </div>
+    </body>
+</html>
