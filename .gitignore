@@ -3,6 +3,10 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+dataset/
+model.pkl
+
+
 # C extensions
 *.so
 
