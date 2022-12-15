@@ -12,47 +12,17 @@
             <h1>Proyecto CC6409</h1>
             <p>Predictor de Rentabilidad AirBnb</p>
             <form action = "{{ url_for('predict') }}" method = "post">
-                <input type="text" name="minimum_nights" placeholder="Cantidad de Noches" required="required" />
-                <select id="room_type" name="room_type" selected="Tipo de Habitacion">
-                    <option value="1">Habitacion Privada</option>
-                    <option value="2">Habitacion Entera</option>
-                    <option value="3">Habitacion Compartida</option>
+                <input type="text" name="latitude" placeholder="Ingrese latitud" required="required"/>
+                <input type="text" name="longitude" placeholder="Ingrese longitud" required="required"/>
+                <select id="room_type" name="room_type" selected="Tipo de Habitación">
+                    <option value="1">Habitación Privada</option>
+                    <option value="2">Habitación Entera</option>
+                    <option value="3">Habitación Compartida</option>
                 </select>
-                <select id="neighbourhood" name="neighbourhood_group">
-                    <option value="0">Cerrillos</option>
-                    <option value="1">Pedro Aguirre Cerda</option>
-                    <option value="2">Conchalí</option>
-                    <option value="3">La Granja</option>
-                    <option value="4">Ñuñoa</option>
-                    <option value="5">Maipú</option>
-                    <option value="6">El Bosque</option>
-                    <option value="7">La Reina</option>
-                    <option value="8">San Miguel</option>
-                    <option value="9">Vitacura</option>
-                    <option value="10">Estación Central</option>
-                    <option value="11">Lo Prado</option>
-                    <option value="12">Las Condes</option>
-                    <option value="13">Recoleta</option>
-                    <option value="14">Lo Barnechea</option>
-                    <option value="15">Quilicura</option>
-                    <option value="16">Providencia</option>
-                    <option value="17">San Ramón</option>
-                    <option value="18">Lo Espejo</option>
-                    <option value="19">Pudahuel</option>
-                    <option value="20">Huechuraba</option>
-                    <option value="21">Cerro Navia</option>
-                    <option value="22">Renca</option>
-                    <option value="23">La Pintana</option>
-                    <option value="24">Quinta Normal</option>
-                    <option value="25">Independencia</option>
-                    <option value="26">Santiago</option>
-                    <option value="27">La Florida</option>
-                    <option value="28">Peñalolén</option>
-                    <option value="29">La Cisterna</option>
-                    <option value="30">San Joaquín</option>
-                    <option value="31">Macul</option>
-                </select>
-                <input type="text" name="availability_365" placeholder="Disponibilidad" required="required"  />
+                <input type="text" name="accomodates" placeholder="Cuantas personas acomoda la propiedad?" required="required" />
+                <input type="text" name="bedrooms" placeholder="Cuantas piezas tiene la propiedad?" required="required"  />
+                <input type="text" name="beds" placeholder="Cuantas camas tiene la propiedad?" required="required"  />
+                <input type="text" name="availability_30" placeholder="Cuantas dias al mes tendrás disponible la propiedad?" required="required"  />
                 <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
             </form>
             <br>
