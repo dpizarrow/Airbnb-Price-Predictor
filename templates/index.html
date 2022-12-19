@@ -48,7 +48,7 @@
                         <div class="col-sm-6">
                             <div class="form-group">
                             <span class="form-label">Días disponibles al mes</span>
-                            <input class="form-control" name="availability_30" type="number" min="1" max="31" />
+                            <input class="form-control" name="availability_30" type="number" min="1" max="31" value="30" required/>
                             </div>
                         </div>
                         
@@ -58,7 +58,7 @@
                         <div class="col-sm-4">
                             <div class="form-group">
                             <span class="form-label">Habitaciones</span>
-                            <select class="form-control">
+                            <select class="form-control" required>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
@@ -75,14 +75,14 @@
                         <div class="col-sm-4">
                             <div class="form-group">
                             <span class="form-label">Personas</span>
-                            <input class="form-control" name="accomodates" type="number" min="1" max="50" />
+                            <input class="form-control" name="accomodates" type="number" min="1" max="50" value="2" required />
                             </div>
                         </div>
 
                         <div class="col-sm-4">
                             <div class="form-group">
                             <span class="form-label">Camas</span>
-                            <input class="form-control" name="beds" type="number" min="1" max="50" />
+                            <input class="form-control" name="beds" type="number" min="1" max="50" value="1" required />
                             </div>
                         </div>
 
@@ -93,14 +93,14 @@
                         <div class="col-sm-4">
                             <div class="form-group">
                             <span class="form-label">Latitud</span>
-                            <input class="form-control" id="latval" name="latitude" />
+                            <input class="form-control" id="latval" name="latitude" required />
                             </div>
                         </div>
 
                         <div class="col-sm-4">
                             <div class="form-group">
                             <span class="form-label">Longitud</span>
-                            <input class="form-control" id="longval" name="longitude" />
+                            <input class="form-control" id="longval" name="longitude" required />
                             </div>
                         </div>
                     </div>
