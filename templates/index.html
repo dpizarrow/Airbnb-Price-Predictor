@@ -1,33 +1,121 @@
 <!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Evaluador de Rentabilidad de Airbnb</title>
+    <link type="text/css" rel="stylesheet" href="../static/css/bootstrap.min.css" />
+    <link type="text/css" rel="stylesheet" href="../static/css/style.css" />
+    <meta name="robots" content="noindex, follow" />
+  </head>
+  <body>
+    <div id="booking" class="section">
+      <div class="section-center">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6 col-md-push-6">
+              <div class="booking-cta">
+                <h1>Evaluador de Rentabilidad de Airbnb</h1>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi
+                  facere, soluta magnam consectetur molestias itaque ad sint
+                  fugit architecto incidunt iste culpa perspiciatis possimus
+                  voluptates aliquid consequuntur cumque quasi. Perspiciatis.
+                </p>
+              </div>
+            </div>
+            <div class="col-md-6 col-md-pull-6">
+              <div class="booking-form">
+                <form action = "{{ url_for('predict') }}" method = "post">
 
-<html>
-    <head>
-        <meta charset="utf-8">
-        <title>Proyecto CC6409</title>
-        <!-- CSS only -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    </head>
-    <body>
-        <div class = "login">
-            <h1>Proyecto CC6409</h1>
-            <p>Predictor de Rentabilidad AirBnb</p>
-            <form action = "{{ url_for('predict') }}" method = "post">
-                <input type="text" name="latitude" placeholder="Ingrese latitud" required="required"/>
-                <input type="text" name="longitude" placeholder="Ingrese longitud" required="required"/>
-                <select id="room_type" name="room_type" selected="Tipo de Habitación">
-                    <option value="1">Habitación Privada</option>
-                    <option value="2">Habitación Entera</option>
-                    <option value="3">Habitación Compartida</option>
-                </select>
-                <input type="text" name="accomodates" placeholder="Cuantas personas acomoda la propiedad?" required="required" />
-                <input type="text" name="bedrooms" placeholder="Cuantas piezas tiene la propiedad?" required="required"  />
-                <input type="text" name="beds" placeholder="Cuantas camas tiene la propiedad?" required="required"  />
-                <input type="text" name="availability_30" placeholder="Cuantas dias al mes tendrás disponible la propiedad?" required="required"  />
-                <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
-            </form>
-            <br>
-            <br>
-            {{ prediction_text }}
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                            <span class="form-label">Tipo de Alojamiento</span>
+                            <select id="room_type" name="room_type" class="form-control">
+                                <option value="1">Habitación Privada</option>
+                                <option value="2">Habitación Entera</option>
+                                <option value="3">Habitación Compartida</option>
+                            </select>
+                            <span class="select-arrow"></span>
+                            </div>
+                        </div>
+                        
+
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                            <span class="form-label">Días disponibles al mes</span>
+                            <input class="form-control" name="availability_30" type="number" min="1" max="31" />
+                            </div>
+                        </div>
+                        
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                            <span class="form-label">Habitaciones</span>
+                            <select class="form-control">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                            </select>
+                            <span class="select-arrow"></span>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                            <span class="form-label">Personas</span>
+                            <input class="form-control" name="accomodates" type="number" min="1" max="50" />
+                            </div>
+                        </div>
+
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                            <span class="form-label">Camas</span>
+                            <input class="form-control" name="beds" type="number" min="1" max="50" />
+                            </div>
+                        </div>
+
+                        
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                            <span class="form-label">Latitud</span>
+                            <input class="form-control" name="latitude" type="number" min="1" max="50" />
+                            </div>
+                        </div>
+
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                            <span class="form-label">Longitud</span>
+                            <input class="form-control" name="longitude" type="number" min="1" max="31" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-btn">
+                        <button type="submit" class="submit-btn">Predecir Rentabilidad</a>
+                      </div>
+
+                </form>
+                <br>
+                <br>
+                {{ prediction_text }}
+              </div>
+            </div>
+          </div>
         </div>
-    </body>
+      </div>
+    </div>
+  </div>
+</body>
 </html>
