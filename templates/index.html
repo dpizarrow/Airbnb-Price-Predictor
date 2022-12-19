@@ -8,8 +8,10 @@
     <link type="text/css" rel="stylesheet" href="../static/css/bootstrap.min.css" />
     <link type="text/css" rel="stylesheet" href="../static/css/style.css" />
     <meta name="robots" content="noindex, follow" />
+    <script src="../static/js/if_gmap.js"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&key=AIzaSyCy92qhM2lrYhSsW-fCrO0Lz94yXTWdRiQ"></script>
   </head>
-  <body>
+  <body onload="if_gmap_init();">
     <div id="booking" class="section">
       <div class="section-center">
         <div class="container">
@@ -91,20 +93,25 @@
                         <div class="col-sm-4">
                             <div class="form-group">
                             <span class="form-label">Latitud</span>
-                            <input class="form-control" name="latitude" type="number" min="1" max="50" />
+                            <input class="form-control" id="latval" name="latitude" />
                             </div>
                         </div>
 
                         <div class="col-sm-4">
                             <div class="form-group">
                             <span class="form-label">Longitud</span>
-                            <input class="form-control" name="longitude" type="number" min="1" max="31" />
+                            <input class="form-control" id="longval" name="longitude" />
                             </div>
                         </div>
                     </div>
+
+                    <div id='maparea'>
+                        <div id="mapitems" style="width: 100%; height: 340px"></div>
+                    </div>
+                    <br>
                     <div class="form-btn">
                         <button type="submit" class="submit-btn">Predecir Rentabilidad</a>
-                      </div>
+                    </div>
 
                 </form>
                 <br>
