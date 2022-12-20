@@ -23,10 +23,10 @@ def predict():
     print(output)
 
     # noches disponibles
-    nights = request.form.get("availability_30")
+    nights = int(request.form.get("availability_30"))
 
     # monto ganado al mes
-    month = nights * output
+    month = nights * int(output)
 
     return render_template('index.html', prediction_text=output, nights=nights, month=month)
 
