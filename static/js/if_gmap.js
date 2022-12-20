@@ -40,6 +40,14 @@ function if_gmap_init()
 	document.getElementById("longval").value = def_longval;
 	document.getElementById("latval").value = def_latval;
 
+
+	let monto_dia = document.getElementById("monto_dia").innerHTML;
+	document.getElementById("monto_dia").innerHTML = format_number(monto_dia);
+
+	let monto_mes = document.getElementById("monto_mes").innerHTML;
+	document.getElementById("monto_mes").innerHTML = format_number(monto_mes);
+
+
 	return false;
 } // end of if_gmap_init
 
@@ -82,3 +90,7 @@ function if_gmap_updateInfoWindow()
 	infoWindow.setContent("Longitude: "+ gmapmarker.getPosition().lng().toFixed(6)+"<br>"+"Latitude: "+ gmapmarker.getPosition().lat().toFixed(6));
 } // end of if_gmap_bindInfoWindow
 
+
+function format_number(number) {
+	return Intl.NumberFormat('es-CL', { style: 'currency', currency: 'CLP' }).format(number);
+}

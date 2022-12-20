@@ -19,12 +19,20 @@
             <div class="col-md-6 col-md-push-6">
               <div class="booking-cta">
                 <h1>Evaluador de Rentabilidad de Airbnb</h1>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi
-                  facere, soluta magnam consectetur molestias itaque ad sint
-                  fugit architecto incidunt iste culpa perspiciatis possimus
-                  voluptates aliquid consequuntur cumque quasi. Perspiciatis.
-                </p>
+
+                {% block prediction_text %}
+                    {% if prediction_text %}
+                        <p class="center" id="resultados" style="display:block">
+                            Colocando en arriendo su alojamiento podrías ganar <br>
+                            <span id="monto_mes" style="font-size: 400%;">{{ month }}</span><br>
+                            
+                            Colocando en arriendo por <span style="font-weight:bold ">{{ nights }}</span> días a un precio diario estimado de <br>
+                            <span id="monto_dia" style="font-weight:bold ">{{ prediction_text }}</span> por noche.
+                        </p>
+                    {% endif %}
+
+                {% endblock %}
+                
               </div>
             </div>
             <div class="col-md-6 col-md-pull-6">
@@ -114,8 +122,6 @@
                     </div>
 
                 </form>
-                <br>
-                <h4>dia:${{ prediction_text }} noches:${{ nights }} mes:${{ month }}</h4>
               </div>
             </div>
           </div>
