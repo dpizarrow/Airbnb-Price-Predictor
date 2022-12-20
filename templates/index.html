@@ -19,7 +19,6 @@
             <div class="col-md-6 col-md-push-6">
               <div class="booking-cta">
                 <h1>Evaluador de Rentabilidad de Airbnb</h1>
-
                 {% block prediction_text %}
                     {% if prediction_text %}
                         <p class="center" id="resultados" style="display:block">
@@ -30,15 +29,26 @@
                             <span id="monto_dia" style="font-weight:bold ">{{ prediction_text }}</span> por noche.
                         </p>
                     {% endif %}
-
                 {% endblock %}
-                
               </div>
             </div>
             <div class="col-md-6 col-md-pull-6">
               <div class="booking-form">
                 <form action = "{{ url_for('predict') }}" method = "post">
-
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                            <span class="form-label">Latitud</span>
+                            <input type="text" class="form-control" id="latval" name="latitude" required />
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                            <span class="form-label">Longitud</span>
+                            <input type="text" class="form-control" id="longval" name="longitude" required />
+                            </div>
+                        </div>
+                    </div>
                     <div class="row">
                         <div class="col-sm-6">
                             <div class="form-group">
@@ -51,17 +61,13 @@
                             <span class="select-arrow"></span>
                             </div>
                         </div>
-                        
-
                         <div class="col-sm-6">
                             <div class="form-group">
-                            <span class="form-label">Días disponibles al mes</span>
-                            <input class="form-control" name="availability_30" type="text" value="30" required/>
+                            <span class="form-label">Personas</span>
+                            <input class="form-control" name="accomodates" type="text" value="2" required />
                             </div>
                         </div>
-                        
                     </div>
-
                     <div class="row">
                         <div class="col-sm-4">
                             <div class="form-group">
@@ -79,40 +85,19 @@
                             <span class="select-arrow"></span>
                             </div>
                         </div>
-
-                        <div class="col-sm-4">
-                            <div class="form-group">
-                            <span class="form-label">Personas</span>
-                            <input class="form-control" name="accomodates" type="text" value="2" required />
-                            </div>
-                        </div>
-
                         <div class="col-sm-4">
                             <div class="form-group">
                             <span class="form-label">Camas</span>
                             <input class="form-control" name="beds" type="text" value="1" required />
                             </div>
                         </div>
-
-                        
-                    </div>
-
-                    <div class="row">
                         <div class="col-sm-4">
                             <div class="form-group">
-                            <span class="form-label">Latitud</span>
-                            <input type="text" class="form-control" id="latval" name="latitude" required />
-                            </div>
-                        </div>
-
-                        <div class="col-sm-4">
-                            <div class="form-group">
-                            <span class="form-label">Longitud</span>
-                            <input type="text" class="form-control" id="longval" name="longitude" required />
+                            <span class="form-label">Días disponibles al mes</span>
+                            <input class="form-control" name="availability_30" type="text" value="30" required/>
                             </div>
                         </div>
                     </div>
-
                     <div id='maparea'>
                         <div id="mapitems" style="width: 100%; height: 250px"></div>
                     </div>
@@ -120,7 +105,6 @@
                     <div class="form-btn">
                         <button type="submit" class="submit-btn">Predecir Rentabilidad</a>
                     </div>
-
                 </form>
               </div>
             </div>
