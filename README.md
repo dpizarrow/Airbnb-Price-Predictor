@@ -12,5 +12,5 @@
 
 - The XGBoost model is trained using Airbnb listings from [Inside Airbnb](http://insideairbnb.com). Before training the model the data was cleaned, removing rows with null values, certain outlying values and columns that were not relevant to the problem. The trained model is then saved to a Pickle file, and a REST API was created to make POST requests on the model with the features specified earlier. 
 
-- The project is deployed on and AWS instance and the website can be viewed [here](https://predictor-airbnb.i1.cl/)
+- The project was deployed on and AWS instance (now deprecated), but can be run on localhost using port 5000, by running `python app.py`.
 
