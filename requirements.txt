@@ -84,7 +84,7 @@ sessioninstaller==0.0.0
 six==1.16.0
 stack-data==0.5.0
 systemd-python==234
-tornado==6.3.2
+tornado==6.3.3
 traitlets==5.4.0
 ubuntu-advantage-tools==27.11.3
 ubuntu-drivers-common==0.0.0
