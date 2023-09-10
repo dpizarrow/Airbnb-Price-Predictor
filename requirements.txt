@@ -25,7 +25,7 @@ httplib2==0.20.2
 idna==3.3
 importlib-metadata==4.6.4
 ipykernel==6.15.3
-ipython==8.5.0
+ipython==8.10.0
 jedi==0.18.1
 jeepney==0.7.1
 jupyter-core==4.11.1
