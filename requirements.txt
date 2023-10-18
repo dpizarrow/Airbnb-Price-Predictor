@@ -89,7 +89,7 @@ traitlets==5.4.0
 ubuntu-advantage-tools==27.11.3
 ubuntu-drivers-common==0.0.0
 ufw==0.36.1
-urllib3==1.26.5
+urllib3==1.26.18
 virtualenv==20.16.4
 wadllib==1.3.6
 wcwidth==0.2.5
